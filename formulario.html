@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+    
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        /* Estilo adicional apenas para o botão de salvar */
+        #salvarBtn {
+            background-color: #e41818;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        #salvarBtn:hover {
+            background-color: #a04545;
+        }
+    </style>
+</head>
+<body>
+     
+   
+
+    <header>
+        <h1>Formulário de Inscrição</h1>
+    </header>
+
+    <main>
+        <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+
+        <div class="form-container">
+            <form action="#" method="post" enctype="multipart/form-data" id="formInscricao">
+                
+                <h2>Informações do Participante</h2>
+                
+                <label for="nome_completo">Nome completo:</label>
+                <input type="text" name="nome_completo" id="nome_completo" required>
+
+                <label for="data_nascimento">Data de nascimento:</label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required min="1900-01-01">
+
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" required>
+
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                    <option value="Prefiro não informar">Prefiro não informar</option>
+                </select>
+
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" placeholder="Insira um e-mail válido" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="telefone" id="telefone" required>
+
+                <label for="documento_identidade">Documento de Identidade:</label>
+                <div class="upload-container">
+                    <input type="file" name="documento_identidade" id="documento_identidade" accept="image/*,.pdf" required>
+                    <label for="documento_identidade" class="upload-label">
+                        <img src="imagens/cloud-upload.svg" alt="Ícone de upload" class="upload-icon">
+                        <span>Clique aqui para selecionar o arquivo</span>
+                    </label>
+                </div>
+
+                <h2>Endereço Residencial</h2>
+                
+                <label for="cep">CEP:</label>
+                <input type="text" name="cep" id="cep" required>
+
+                <div class="endereco-container">
+                    <div class="endereco-item">
+                        <label for="rua">Rua:</label>
+                        <input type="text" name="rua" id="rua" required>
+                    </div>
+                    <div class="endereco-item">
+                        <label for="numero">Número:</label>
+                        <input type="text" name="numero" id="numero" required>
+                    </div>
+                    <div class="endereco-item">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" name="cidade" id="cidade" required>
+                    </div>
+                    <div class="endereco-item">
+                        <label for="estado">Estado:</label>
+                        <input type="text" name="estado" id="estado" required>
+                    </div>
+                </div>
+
+                <label for="comprovante_residencia">Comprovante de Residência:</label>
+                <div class="upload-container">
+                    <input type="file" name="comprovante_residencia" id="comprovante_residencia" accept="image/*,.pdf" required>
+                    <label for="comprovante_residencia" class="upload-label">
+                        <img src="imagens/cloud-upload.svg" alt="Ícone de upload" class="upload-icon">
+                        <span>Clique aqui para selecionar o arquivo</span>
+                    </label>
+                </div>
+
+                <h2>Trilhas de Aprendizagem</h2>
+                <p>Selecione apenas uma trilha:</p>
+
+                <div class="trilhas">
+                    <div class="trilha-item">
+                        <label>
+                            <input type="radio" name="trilha" value="Programação Front-end" required class="custom-radio">
+                            <div class="icone-container">
+                                <img src="imagens/front-end.svg" alt="Ícone de Programação Front-end" class="icone-trilha">
+                                <span>Programação Front-end</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="trilha-item">
+                        <label>
+                            <input type="radio" name="trilha" value="Programação Back-end" class="custom-radio">
+                            <div class="icone-container">
+                                <img src="imagens/back-end.svg" alt="Ícone de Programação Back-end" class="icone-trilha">
+                                <span>Programação Back-end</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="trilha-item">
+                        <label>
+                            <input type="radio" name="trilha" value="Programação de Jogos" class="custom-radio">
+                            <div class="icone-container">
+                                <img src="imagens/jogos.svg" alt="Ícone de Programação de Jogos" class="icone-trilha">
+                                <span>Programação de Jogos</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="trilha-item">
+                        <label>
+                            <input type="radio" name="trilha" value="Design e Experiência" class="custom-radio">
+                            <div class="icone-container">
+                                <img src="imagens/design.svg" alt="Ícone de Design e Experiência" class="icone-trilha">
+                                <span>Design e Experiência</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="trilha-item">
+                        <label>
+                            <input type="radio" name="trilha" value="Ciência de Dados" class="custom-radio">
+                            <div class="icone-container">
+                                <img src="imagens/dados.svg" alt="Ícone de Ciência de Dados" class="icone-trilha">
+                                <span>Ciência de Dados</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="confirmacao-acesso">
+                    <h2>Confirmação de Acesso</h2>
+                    <p>Por favor, confirme seu ID e senha cadastrados:</p>
+                    
+                    <div class="form-group">
+                        <label for="confirmacao_id">ID de Usuário:</label>
+                        <input type="text" id="confirmacao_id" name="confirmacao_id" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmacao_senha">Senha:</label>
+                        <div class="password-container">
+                            <input type="password" id="confirmacao_senha" name="confirmacao_senha" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+                        </div>
+                    </div>
+
+                    <small class="login-link">
+                        <a href="assets/html/signin.html">Esqueceu seu ID ou senha?</a>
+                    </small>
+                </div>
+
+                <div class="termos-container">
+                    <input type="checkbox" name="termos" id="termos" required>
+                    <label for="termos">
+                        Declaro que li e concordo com os <a href="#">Termos e Condições</a> e com a <a href="#">Política de Privacidade</a>.
+                    </label>
+                </div>
+
+                <div class="botoes-container">
+                    <button type="button" id="salvarBtn">Salvar Rascunho</button>
+                    <button type="reset">Cancelar</button>
+                    <button type="submit">Fazer inscrição</button>
+                </div>
+            </form>
+
+            <div class="imagem-direita">
+                <img src="imagens/ilustration.svg" alt="Ilustração do formulário" class="imagem-formulario">
+                <img src="imagens/logo-trilhas-inova.svg" alt="Logo Trilhas Inova" class="logo">
+            </div>
+        </div>
+    </main>
+    
+
+    <script>
+        
+        function togglePassword() {
+            const senhaInput = document.getElementById('confirmacao_senha');
+            senhaInput.type = senhaInput.type === 'password' ? 'text' : 'password';
+        }
+
+        // 2. Sistema de Rascunho 
+        function salvarRascunho() {
+            const formData = {
+                nome_completo: document.getElementById('nome_completo').value,
+                data_nascimento: document.getElementById('data_nascimento').value,
+                cpf: document.getElementById('cpf').value,
+                sexo: document.getElementById('sexo').value,
+                email: document.getElementById('email').value,
+                telefone: document.getElementById('telefone').value,
+                cep: document.getElementById('cep').value,
+                rua: document.getElementById('rua').value,
+                numero: document.getElementById('numero').value,
+                cidade: document.getElementById('cidade').value,
+                estado: document.getElementById('estado').value,
+                trilha: document.querySelector('input[name="trilha"]:checked')?.value,
+                confirmacao_id: document.getElementById('confirmacao_id').value
+            };
+
+            localStorage.setItem('rascunhoInscricao', JSON.stringify(formData));
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Rascunho salvo!',
+                text: 'Seus dados foram guardados com sucesso.',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        }
+
+        // 3. Carregar rascunho salvo 
+        function carregarRascunho() {
+            const dadosSalvos = localStorage.getItem('rascunhoInscricao');
+            if (dadosSalvos) {
+                const formData = JSON.parse(dadosSalvos);
+                
+                // Preenche os campos
+                for (const [key, value] of Object.entries(formData)) {
+                    const campo = document.getElementById(key);
+                    if (campo) campo.value = value || '';
+                }
+                
+                // Marca a trilha selecionada
+                if (formData.trilha) {
+                    const radio = document.querySelector(`input[name="trilha"][value="${formData.trilha}"]`);
+                    if (radio) radio.checked = true;
+                }
+            }
+        }
+
+        // 4. Validação e envio 
+        document.getElementById('formInscricao').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // validação original aqui
+            function validarCPF(cpf) {
+                cpf = cpf.replace(/[^\d]+/g,'');
+                if(cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+                // ... (mantenha sua validação de CPF original)
+                return true;
+            }
+            
+            
+            let valido = true;
+            if (!document.getElementById('nome_completo').value.trim()) {
+                alert('Nome completo é obrigatório!');
+                valido = false;
+            }
+            
+
+            if (valido) {
+                Swal.fire({
+                    title: 'Enviando inscrição...',
+                    timer: 1500,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                }).then(() => {
+                    
+                    
+                    Swal.fire({
+                        title: 'Sucesso!',
+                        text: 'Inscrição realizada com sucesso',
+                        icon: 'success'
+                    });
+                    
+                    // Limpa o formulário e remove rascunho
+                    this.reset();
+                    localStorage.removeItem('rascunhoInscricao');
+                });
+            }
+        });
+
+        // 5. Inicialização 
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carrega rascunho ao abrir a página
+            carregarRascunho();
+            
+            // Configura botão de salvar
+            document.getElementById('salvarBtn').addEventListener('click', salvarRascunho);
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,1108 @@
+stilos globais */
+.Brand { 
+  --brand-1: #F67841; 
+  --brand-2: #F3541C; 
+  --brand-3: #E43A12; 
+  --brand-4: #2135A6; 
+} 
+
+.Text { 
+  --text-primary: #292524; 
+  --text-secondary: #57534E; 
+  --text-tertiary: #8F8881; 
+  --text-highlight: #E43A12; 
+} 
+
+.Surface { 
+  --surface-primary: #FFFFFF; 
+  --surface-secondary: #FEE7D6; 
+  --surface-disabled: #E7E5E4; 
+} 
+
+.Stroke { 
+  --stroke-default: #D6D3D1; 
+  --stroke-highlight: #F3541C; 
+} 
+
+.Semantic { 
+  --semantic-error: #DC2626; 
+} 
+
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: bold;
+}
+
+/* Container principal do formulário */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Estilo das trilhas de aprendizagem */
+.trilhas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.trilha-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.trilha-item input[type="radio"] {
+  margin-right: 10px;
+}
+
+.trilha-item:hover {
+  background-color: #FEE7D6;
+}
+
+/* Estilo para termos e condições */
+.termos {
+  margin-top: 20px;
+}
+
+.termos label {
+  font-size: 14px;
+  color: #57534E;
+}
+
+.termos a {
+  color: #E43A12;
+  text-decoration: none;
+}
+
+.termos a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para upload de arquivo */
+.upload-arquivo {
+  margin-top: 20px;
+}
+
+/* Estilo do container de upload */
+.upload-container {
+  position: relative;
+  width: 100%;
+  height: 160px; /* Altura do container */
+  border: 2px dashed var(--stroke-default, #D6D3D1); /* Borda tracejada */
+  border-radius: 8px; /* Bordas arredondadas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--surface-primary, #FFFFFF); /* Fundo branco */
+}
+
+/* Esconde o input de arquivo padrão */
+.upload-container input[type="file"] {
+  display: none;
+}
+
+/* Estilo do label de upload */
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espaço entre o ícone e o texto */
+  cursor: pointer;
+}
+
+/* Estilo do ícone de upload */
+.upload-icon {
+  width: 40px; /* Tamanho do ícone */
+  height: 40px; /* Tamanho do ícone */
+}
+
+/* Estilo do texto de upload */
+.upload-label span {
+  font-size: 14px;
+  color: var(--text-secondary, #57534E);
+}
+
+.upload-arquivo label {
+  font-size: 16px;
+  color: #333;
+}
+
+.upload-arquivo input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Container dos campos de endereço */
+.endereco-container {
+  display: flex;
+  gap: 16px; /* Espaço entre os campos */
+  flex-wrap: wrap; /* Permite que os campos quebrem para a próxima linha em telas menores */
+}
+
+/* Estilo de cada campo de endereço */
+.endereco-item {
+  flex: 1; /* Faz os campos ocuparem o espaço disponível igualmente */
+  min-width: 150px; /* Largura mínima para cada campo */
+}
+
+/* Estilo dos inputs dentro do container de endereço */
+.endereco-item input {
+  width: 100%; /* Ocupa toda a largura do container */
+  height: 40px; /* Altura do input */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 8px; /* Espaçamento interno */
+  border: 2px solid var(--stroke-default, #D6D3D1); /* Borda padrão */
+  font-size: 14px; /* Tamanho da fonte */
+  box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+}
+
+/* Responsividade: em telas menores, os campos ficam em coluna */
+@media (max-width: 768px) {
+  .endereco-container {
+    flex-direction: column; /* Coloca os campos em coluna */
+  }
+}
+
+/* Estilo para os botões de ação */
+.botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.botoes button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: Poppins;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #E43A12;
+  color: white;
+}
+
+button[type="reset"] {
+  background-color: #FEE7D6;
+  color: #333;
+}
+
+/* Estilo das trilhas */
+.trilhas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  gap: 15px; /* Espaçamento entre os itens */
+}
+
+.trilha-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--stroke-default, #D6D3D1);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.trilha-item:hover {
+  background-color: var(--surface-secondary, #FEE7D6);
+}
+
+.icone-trilha {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Trilhas de Aprendizagem - Fonte Montserrat */
+h2, 
+label[for="front_end"], 
+label[for="back_end"], 
+label[for="jogos"], 
+label[for="design"], 
+label[for="dados"] { 
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos para os títulos */
+h1 { 
+  font-size: 32px; 
+  line-height: 120%; 
+  font-weight: bold; 
+} 
+
+h2 { 
+  font-size: 24px; 
+  line-height: 120%; 
+  font-weight: bold; 
+} 
+
+h3 { 
+  font-size: 20px; 
+  line-height: 120%; 
+  font-weight: bold; 
+} 
+
+h4 { 
+  font-size: 16px; 
+  line-height: 120%; 
+  font-weight: bold; 
+}
+
+/* Estrutura flexbox para organizar os elementos em coluna */
+form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px; /* Espaço entre os elementos */
+}
+
+/* Estilização de inputs, selects e botões */
+input, select, button {
+  width: 400px; /* Largura reduzida */
+  height: 40px; /* Altura reduzida */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 8px; /* Espaçamento interno reduzido */
+  background: var(--surface-colors-surface-primary, rgba(255, 255, 255, 1)); /* Fundo com variável de cor */
+  border: 2px solid var(--stroke-colors-stroke-highlight, rgba(243, 84, 28, 1)); /* Borda com variável de cor */
+  font-size: 14px; /* Tamanho da fonte reduzido */
+  box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+  display: flex;
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+/* Botão de envio estilizado */
+button[type="submit"] { 
+  background-color: var(--brand-3, #E43A12); 
+  color: white; 
+  font-weight: bold; 
+  cursor: pointer; 
+}
+
+/* Botão secundário */
+button[type="button"] { 
+  background-color: var(--surface-secondary, #FEE7D6); 
+  color: black; 
+  font-weight: bold; 
+  cursor: pointer; 
+}
+
+/* Layout fixo com borda de 1px */
+.layout-fixo {
+  width: 256px; /* Largura fixa */
+  height: 120px; /* Altura ajustada */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 32px 16px 16px 16px; /* Padding superior, direito, inferior e esquerdo */
+  gap: 8px; /* Espaço entre os elementos */
+  background-color: var(--surface-primary, #FFFFFF); /* Cor de fundo */
+  border: 1px solid var(--semantic-error, #DC2626); /* Borda de 1px de espessura com a cor de erro */
+}
+
+/* Outras classes de layout com espaçamento */
+.formulario {
+  width: 1280px;
+  height: 832px;
+  top: 124px;
+  left: 5712px;
+  background: var(--brand-4, #2135A6);
+}
+
+.form-area {
+  width: 656px;
+  height: auto;
+  padding: 64px;
+  gap: 48px;
+  background: var(--surface-primary, #FFFFFF);
+}
+
+.frame {
+  width: 528px;
+  height: auto;
+  gap: 24px;
+}
+
+.informacoes-participante {
+  width: 528px;
+  height: auto;
+  gap: 24px;
+}
+
+.endereco-residencial {
+  width: 528px;
+  height: 520px;
+  gap: 24px;
+}
+
+.trilhas-aprendizagem {
+  width: 528px;
+  height: 472px;
+  gap: 24px;
+  .trilhas-aprendizagem {
+    width: 528px; /* Adicionado 'px' para unidades de largura */
+    height: 20px; /* Adicionado 'px' para unidades de altura */
+    font-family: 'Poppins', sans-serif; /* Adicionado fallback para fontes */
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%; /* Relativo ao tamanho da fonte */
+    letter-spacing: 0; /* Não é necessário o '%' aqui */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    vertical-align: middle; /* Alinha verticalmente, útil em contextos de tabela ou inline-block */
+    background: rgba(41, 37, 36, 1); /* Cor de fundo */
+    color: white; /* Adicionado cor do texto para contraste */
+    display: flex; /* Usado para alinhamento vertical */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+  }
+}
+
+.trilhas-aprendizagem-titulo 
+.botoes-container {
+  display: flex;
+  justify-content: flex-end; /* Mantém os botões alinhados à direita */
+  width: 100%; /* Ocupa toda a largura do container */
+  padding-right: 120px; /* Reduzi um pouco para ficar mais equilibrado */
+}
+
+/* Ajuste do tamanho do título "Trilhas de aprendizagem" */
+.trilhas-titulo 
+   {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 12px; /* Diminui ainda mais */
+    line-height: 120%; /* Pequena redução no espaçamento */
+    letter-spacing: 0%;
+    vertical-align: middle;
+    background: rgba(41, 37, 36, 1);
+    color: white; /* Mantém legível */
+    padding: 5px 10px; /* Ajusta o espaçamento interno */
+  }
+  
+
+.checkbox {
+  width: 528px;
+  height: 48px;
+  gap: 12px;
+}
+
+.form-actions {
+  width: 528px;
+  height: 64px;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.focus {
+  width: 528px;
+  height: 48px;
+  border-radius: 8px;
+  border: 4px solid var(--surface-secondary, #FEE7D6);
+}
+
+.text-field {
+  width: 528px;
+  height: 48px;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  border-width: 1px;
+  background: var(--surface-primary, #FFFFFF);
+  border: 1px solid var(--stroke-default, #D6D3D1);
+}
+
+.formulario-inscricao {
+  width: 528px;
+  height: 30px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: var(--text-primary, rgba(41, 37, 36, 1));
+}
+
+.label {
+  width: 528px;
+  height: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  background: var(--text-secondary, rgba(87, 83, 78, 1));
+}
+
+.upload-drop-area {
+  width: 528px;
+  height: 188px;
+  gap: 8px;
+  padding: 24px 16px;
+  border-radius: 8px;
+  background: var(--surface-primary, #FFFFFF);
+  border: 1px solid var(--stroke-default, #D6D3D1);
+}
+
+.vector {
+  width: 40px;
+  height: 30px;
+  top: 6px;
+  left: 4px;
+  border-width: 3px;
+  border: 3px solid var(--stroke-default, #D6D3D1);
+}
+
+.clique-arquivo {
+  width: 163px;
+  height: 48px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  background: rgba(168, 162, 158, 1);
+}
+
+.selecione-trilha {
+  width: 528px;
+  height: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  background: rgba(87, 83, 78, 1);
+}
+ 
+input {
+  width: 100%;
+  border: 1px solid #D6D3D1;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0 10px;
+  outline: none;
+}
+
+.obrigatorio {
+  border-color: #F3541C;
+  box-shadow: 3px 3px 0px #FEE7D6;
+}
+
+/* Adicione isso ao seu CSS existente */
+
+/* Container principal do formulário e imagem */
+.form-container {
+  display: flex;
+  gap: 20px; /* Espaço entre o formulário e a imagem */
+  align-items: flex-start; /* Alinha os itens ao topo */
+  max-width: 1200px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+  padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilo do formulário */
+form {
+  flex: 1; /* Ocupa o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espaço entre os elementos do formulário */
+}
+
+/* Estilo da imagem ao lado do formulário */
+.imagem-direita {
+  flex: 1; /* Ocupa o espaço disponível */
+  text-align: center; /* Centraliza a imagem */
+  background-color: var(--brand-4, #2135A6); /* Fundo azul */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+.imagem-direita img {
+  max-width: 100%; /* A imagem se ajusta ao contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+/* Adicione isso ao seu CSS existente */
+
+/* Container principal do formulário e imagem */
+.form-container {
+  display: flex;
+  gap: 20px; /* Espaço entre o formulário e a imagem */
+  align-items: flex-start; /* Alinha os itens ao topo */
+  max-width: 1200px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+  padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilo do formulário */
+form {
+  flex: 1; /* Ocupa o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espaço entre os elementos do formulário */
+}
+
+/* Estilo da imagem ao lado do formulário */
+.imagem-direita {
+  flex: 1; /* Ocupa o espaço disponível */
+  text-align: center; /* Centraliza a imagem */
+  background-color: var(--brand-4, #2135A6); /* Fundo azul */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+.imagem-direita img {
+  max-width: 100%; /* A imagem se ajusta ao contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Responsividade: em telas menores, a imagem vai para cima do formulário */
+@media (max-width: 768px) {
+  .form-container {
+      flex-direction: column; /* Coloca a imagem acima do formulário */
+  }
+
+  .imagem-direita {
+      order: -1; /* Coloca a imagem antes do formulário */
+  }
+}
+.trilhas {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebra de linha se necessário */
+  gap: 15px; /* Espaçamento entre os itens */
+}
+
+.trilha-item {
+  display: flex;
+  align-items: center;
+  width: 200px; /* Define uma largura fixa para cada item */
+}
+
+           /* Adicione isso ao seu CSS existente */
+
+/* Container principal do formulário e imagem */
+.form-container {
+  display: flex;
+  gap: 20px; /* Espaço entre o formulário e a imagem */
+  align-items: flex-start; /* Alinha os itens ao topo */
+  max-width: 1200px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+  padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilo do formulário */
+form {
+  flex: 1; /* Ocupa o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espaço entre os elementos do formulário */
+}
+
+/* Estilo da imagem ao lado do formulário */
+.imagem-direita {
+  flex: 1; /* Ocupa o espaço disponível */
+  text-align: center; /* Centraliza a imagem */
+  background-color: var(--brand-4, #2135A6); /* Fundo azul */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+.imagem-direita img {
+  max-width: 100%; /* A imagem se ajusta ao contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Responsividade: em telas menores, a imagem vai para cima do formulário */
+@media (max-width: 768px) {
+  .form-container {
+      flex-direction: column; /* Coloca a imagem acima do formulário */
+  }
+
+  .imagem-direita {
+      order: -1; /* Coloca a imagem antes do formulário */
+  }
+}
+
+/* Estilo das trilhas */
+.trilhas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  gap: 15px; /* Espaçamento entre os itens */
+}
+
+.trilha-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--stroke-default, #D6D3D1);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.trilha-item:hover {
+  background-color: var(--surface-secondary, #FEE7D6);
+}
+
+.icone-trilha {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Outros estilos */
+input, select, button {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: var(--surface-primary, #FFFFFF);
+  border: 2px solid var(--stroke-highlight, #F3541C);
+}
+
+button[type="submit"] {
+  background-color: var(--brand-3, #E43A12);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="reset"] {
+  background-color: var(--surface-secondary, #FEE7D6);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-radio {
+  width: auto; /* Remove qualquer largura fixa */
+  height: auto; /* Remove qualquer altura fixa */
+  margin-right: 10px; /* Espaçamento entre o radio e o texto */
+}
+
+.trilha-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--stroke-default, #D6D3D1);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.trilha-item:hover {
+  background-color: var(--surface-secondary, #FEE7D6);
+}
+
+.icone-trilha {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.trilha-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinha os itens à esquerda */
+  padding: 10px;
+  border: 1px solid var(--stroke-default, #D6D3D1);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.icone-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.icone-trilha {
+  width: 24px;
+  height: 24px;
+}
+
+.custom-radio {
+  margin-right: 10px; /* Espaço entre a bolinha e o ícone */
+}
+
+.trilha-item:hover {
+  background-color: var(--surface-secondary, #FEE7D6);
+}
+
+input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+label[for="termos"] {
+  vertical-align: middle;
+  font-size: 14px;
+  color: var(--text-secondary, #57534E);
+  display: inline-flex;
+  align-items: center;
+}
+
+label[for="termos"] a {
+  color: var(--brand-3, #E43A12);
+  text-decoration: none;
+}
+
+label[for="termos"] a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+/* Estilos globais */
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-size: 14px; /* Tamanho da fonte reduzido */
+}
+
+h1 {
+  font-size: 24px; /* Tamanho da fonte reduzido para o título */
+  line-height: 120%;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 18px; /* Tamanho da fonte reduzido para subtítulos */
+  line-height: 120%;
+  font-weight: bold;
+}
+
+/* Container principal do formulário */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px; /* Padding reduzido */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaço entre os elementos reduzido */
+}
+
+/* Estilo dos labels */
+label {
+  font-size: 12px; /* Tamanho da fonte reduzido para labels */
+  color: var(--text-secondary, #57534E);
+}
+
+/* Estilo dos inputs, selects e botões */
+input, select, button {
+  width: 100%;
+  height: 36px; /* Altura reduzida */
+  border-radius: 6px; /* Bordas arredondadas */
+  padding: 6px 10px; /* Padding reduzido */
+  background: var(--surface-primary, #FFFFFF);
+  border: 1px solid var(--stroke-default, #D6D3D1);
+  font-size: 12px; /* Tamanho da fonte reduzido */
+  box-sizing: border-box;
+}
+
+/* Estilo dos botões */
+button {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: var(--brand-3, #E43A12);
+  color: white;
+}
+
+button[type="reset"] {
+  background-color: var(--surface-secondary, #FEE7D6);
+  color: black;
+}
+
+/* Estilo das trilhas de aprendizagem */
+.trilhas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Espaçamento entre os itens reduzido */
+}
+
+.trilha-item {
+  display: flex;
+  align-items: center;
+  padding: 8px; /* Padding reduzido */
+  border: 1px solid var(--stroke-default, #D6D3D1);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px; /* Tamanho da fonte reduzido */
+}
+
+.trilha-item:hover {
+  background-color: var(--surface-secondary, #FEE7D6);
+}
+
+.icone-trilha {
+  width: 20px; /* Tamanho do ícone reduzido */
+  height: 20px; /* Tamanho do ícone reduzido */
+  margin-right: 8px; /* Margem reduzida */
+}
+
+/* Estilo para termos e condições */
+input[type="checkbox"] {
+  width: 14px; /* Tamanho do checkbox reduzido */
+  height: 14px; /* Tamanho do checkbox reduzido */
+  margin-right: 8px; /* Margem reduzida */
+  vertical-align: middle;
+}
+
+label[for="termos"] {
+  font-size: 12px; /* Tamanho da fonte reduzido */
+  color: var(--text-secondary, #57534E);
+  display: inline-flex;
+  align-items: center;
+}
+
+label[for="termos"] a {
+  color: var(--brand-3, #E43A12);
+  text-decoration: none;
+}
+
+label[for="termos"] a:hover {
+  text-decoration: underline;
+}
+
+/* Container principal do formulário */
+.form-container {
+  max-width: 800px;
+  margin: 0 0 0 20px; /* Margem esquerda reduzida (20px) */
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-self: flex-start; /* Alinha o container à esquerda */
+}
+
+/* Estilo para o container do checkbox e label */
+.termos-container {
+  display: flex; /* Alinha o checkbox e o texto na mesma linha */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 8px; /* Espaço entre o checkbox e o texto */
+}
+
+/* Estilo para o checkbox */
+input[type="checkbox"] {
+  width: 15; /* Tamanho do checkbox */
+  height: 16px; /* Tamanho do checkbox */
+  margin: 0; /* Remove margens padrão */
+}
+
+/* Estilo para o label */
+label[for="termos"] {
+  font-size: 11px; /* Tamanho da fonte */
+  color: var(--text-secondary, #57534E); /* Cor do texto */
+  display: inline-flex; /* Permite alinhar o texto com o checkbox */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilo para os links dentro do label */
+label[for="termos"] a {
+  color: var(--brand-3, #E43A12); /* Cor dos links */
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+label[for="termos"] a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estilo para inputs, selects e textareas */
+input, select, textarea {
+  width: 100%;
+  height: 36px;
+  border-radius: 6px;
+  padding: 6px 10px;
+  background: var(--surface-primary, #FFFFFF);
+  border: 2px solid var(--brand-2, #F3541C); /* Borda laranja */
+  font-size: 12px;
+  box-sizing: border-box;
+  outline: none; /* Remove o contorno padrão ao focar */
+}
+
+/* Estilo para o foco dos campos */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--brand-3, #E43A12); /* Borda laranja mais escura ao focar */
+  box-shadow: 0 0 5px rgba(243, 84, 28, 0.5); /* Sombra laranja ao focar */
+}
+
+/* Estilo para os botões (opcional) */
+button {
+  border: 2px solid var(--brand-2, #F3541C); /* Borda laranja nos botões */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: var(--brand-3, #E43A12);
+  color: white;
+}
+
+button[type="reset"] {
+  background-color: var(--surface-secondary, #FEE7D6);
+  color: black;
+}
+
+/* Estilo para o container dos botões */
+.botoes-container {
+  display: flex; /* Alinha os botões horizontalmente */
+  gap: 10px; /* Espaço entre os botões */
+  margin-top: 20px; /* Espaço acima dos botões */
+}
+
+/* Estilo para os botões */
+button {
+  flex: 1; /* Faz os botões ocuparem o espaço disponível igualmente */
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: poppins;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: var(--brand-3, #E43A12); /* Cor laranja */
+  color: white;
+}
+
+button[type="reset"] {
+  background-color: var(--surface-secondary, #FEE7D6); /* Cor clara */
+  color: black;
+}
+ 
+
+.botoes-container {
+  display: flex;
+  justify-content: flex-end; /* Alinha os botões à direita */
+  width: 97%; /* Garante que a div ocupe toda a largura disponível */
+}
+
+.botoes-container {
+  display: flex;
+  justify-content: flex-end; /* Mantém os botões alinhados à direita */
+  width: 100%; /* Ocupa toda a largura do container */
+  padding-right: 160px; /* Ajuste esse valor para encontrar a posição ideal */
+}
+  
+/* Estilo da imagem e logo ao lado do formulário */
+.imagem-direita {
+  flex: 1;
+  text-align: center;
+  background-color: var(--brand-4, #2135A6);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Espaço entre a logo e a ilustração */
+}
+
+.imagem-direita .logo {
+  width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+  height: auto;
+}
+
+.imagem-direita .imagem-formulario {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+
+ /* Dark Mode (diferencial) */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #121212;
+      color: #ffffff;
+  }
+  
+  .form-container {
+      background-color: #1e1e1e;
+  }
+  
+  input, select {
+      background-color: #2d2d2d;
+      color: #ffffff;
+      border-color: #444;
+  }
+}
+
+/* Microinterações (diferencial) */
+button {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Validação visual */
+.input-error {
+  border-color: var(--semantic-error) !important;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+
+
+
+
+
+
+
