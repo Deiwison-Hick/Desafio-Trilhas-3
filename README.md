@@ -8,7 +8,7 @@ Este projeto foi desenvolvido como parte da Etapa 3 do **Desafio Trilhas**, com 
 
 - 🧍‍♂️ Campo para nome completo  
 - 📧 Campo para e-mail com validação  
-- 📱 Campo para telefone  entre outros.
+- 📱 Campo para telefone,  entre outros.
 - ✅ Validação básica dos dados  
 - 🎨 Estilo limpo e responsivo com HTML e CSS puros
 
